@@ -7,7 +7,6 @@ EXPOSE 1234
 RUN apk add --no-cache git \
   libc-dev \
   libusb-dev \
-  g++ \
   gcc \
   make \
   cmake \
