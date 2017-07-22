@@ -8,4 +8,4 @@ echo "Frequency correcting device #$DEVICE, duration: ${PPM_TIME}s..."
 PPM=`rtl_test -d $DEVICE -p$PPM_TIME 2>&1 | grep "real sample rate" | cut -d':' -f4 | tr -d '[:space:]'`
 echo "Determined required frequency correction of ${PPM}ppm."
 
-rtl_tcp -d $DEVICE -g $GAIN -P $PPM
+rtl_tcp -a 0.0.0.0 -d $DEVICE -g $GAIN -P $PPM
