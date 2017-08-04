@@ -12,7 +12,8 @@ RUN apk add --no-cache git \
   cmake \
   bash
 
-RUN git clone https://github.com/radiowitness/librtlsdr /usr/local/share/librtlsdr
+ADD https://api.github.com/repos/radiowitness/librtlsdr/git/refs/heads/master version.json
+RUN git clone -b master https://github.com/radiowitness/librtlsdr.git /usr/local/share/librtlsdr
 RUN mkdir /usr/local/share/librtlsdr/build
 
 WORKDIR /usr/local/share/librtlsdr/build
