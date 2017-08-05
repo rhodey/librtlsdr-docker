@@ -25,7 +25,7 @@ $ ./spawn.sh
 ## Environment Variables
   + `RTL_IDX` - device index (default: 0)
   + `RTL_GAIN` - gain in dB (default: auto)
-  + `RTL_PPM_TIME` - PPM test duration in seconds (default: 120)
+  + `RTL_PPM_TIME` - PPM test duration in seconds (default: 240)
 
 ## License
 Copyright 2017 Rhodey Orbits, GPLv3.
