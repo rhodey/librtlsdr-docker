@@ -23,8 +23,6 @@ $ ./spawn.sh
 ```
 
 ## Environment Variables
-When launching `rtl_tcp` containers via `spawn.sh` the following environment variables are
-automatically passed in via `docker run -e` flags.
   + `RTL_IDX` - device index (default: 0)
   + `RTL_GAIN` - gain in dB (default: auto)
   + `RTL_PPM_TIME` - PPM test duration in seconds (default: 120)
