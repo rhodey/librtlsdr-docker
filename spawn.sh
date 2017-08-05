@@ -17,5 +17,5 @@ while read -r DEVICE_ID; do
 done <<< "$DEVICE_IDS"
 
 for DEVICE_IDX in $(seq 0 $((DEVICE_COUNT - 1))); do
-    docker run -d --name "rtl_tcp_$DEVICE_IDX" $DEVICES -e "RTL_IDX=$DEVICE_IDX" -e "RTL_GAIN=$RTL_GAIN" -e "RTL_PPM_TIME=$RTL_PPM_TIME" rtl_tcp
+    docker run -d --name "rtl_tcp_$DEVICE_IDX" $DEVICES --env-file .env rtl_tcp
 done
