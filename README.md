@@ -18,7 +18,7 @@ machine, do it like this:
 ```
 $ lsusb | grep "Realtek.*RTL"
 Bus 002 Device 008: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
-$ docker run --name rtl_tcp_0 -d --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 --env-file .env rtl_tcp
+$ docker run -d --name rtl_tcp_0 --network radiowitness --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 --env-file .env rtl_tcp
 ```
 
 Alternatively you can use this helper script to spin up one container for each connected RTL USB
@@ -28,7 +28,8 @@ $ ./spawn.sh
 ```
 
 ## Environment Variables
-  + `RTL_IDX` - device index, unnecessary if using `spawn.sh`
+  + `DOCKER_NET` - docker network name, **necessary** if using `spawn.sh`
+  + `RTL_IDX` - RTL device index, **unnecessary** if using `spawn.sh`
   + `RTL_GAIN` - gain in dB, defaults to `0` for auto
   + `RTL_PPM_TIME` - PPM test duration in seconds
   + `RTL_BUFF_LEN` - length of USB transfer buffers in units of 512 bytes
