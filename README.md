@@ -18,7 +18,12 @@ machine, do it like this:
 ```
 $ lsusb | grep "Realtek.*RTL"
 Bus 002 Device 008: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
-$ docker run -d --name rtl_tcp_0 --network radiowitness --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 --env-file .env rtl_tcp
+$ docker run -d \
+  --name rtl_tcp_0 \
+  --network radiowitness \
+  --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 \
+  --env-file .env \
+  rtl_tcp
 ```
 
 Alternatively you can use this helper script to spin up one container for each connected RTL USB
