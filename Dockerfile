@@ -22,5 +22,3 @@ RUN make
 RUN make install
 
 WORKDIR /usr/local/share/librtlsdr
-COPY rtl_tcp_ppm.sh rtl_tcp_ppm.sh
-CMD /bin/bash rtl_tcp_ppm.sh
