@@ -31,7 +31,7 @@ for idx in $(seq 0 $((device_count - 1))); do
         serial=$(echo $ppm_spec | cut -f1 -d:)
         ppm=$(echo $ppm_spec | cut -f2 -d:)
         if echo $idx_serial | grep "$serial" > /dev/null ; then
-          docker run --name "rtl_tcp_$serial" \
+          docker run --name "rtl_tcp_$idx" \
             --network $DOCKER_NET \
             $devices -d librtlsdr \
             rtl_tcp -v -a 0.0.0.0 \
