@@ -14,9 +14,9 @@ connected to your host machine, for example running `rtl_eeprom` works like this
 $ lsusb | grep "Realtek.*RTL"
 Bus 002 Device 008: ID 0bda:2838 Realtek Semiconductor Corp. RTL2838 DVB-T
 $ docker run \
-  --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 \
-  --rm -it librtlsdr \
-  rtl_eeprom -d 0
+    --device /dev/bus/usb/002/008:/dev/bus/usb/002/008 \
+    --rm -it librtlsdr \
+    rtl_eeprom -d 0
 ```
 
 ## Radio Witness Usage
