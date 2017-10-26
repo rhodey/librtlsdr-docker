@@ -17,5 +17,5 @@ while read -r device_id; do
 done <<< "$device_ids"
 
 for idx in $(seq 0 $((device_count - 1))); do
-    docker run $devices --rm -it librtlsdr rtl_eeprom -d $idx -s "0000000$idx"
+    docker run $devices --rm -t librtlsdr rtl_eeprom -d $idx -s "0000000$idx"
 done

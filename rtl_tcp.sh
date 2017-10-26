@@ -26,7 +26,7 @@ read -r -a ppm_specs <<< "$RTL_PPMS"
 IFS=$ifs_tmp
 
 for idx in $(seq 0 $((device_count - 1))); do
-    idx_serial=`docker run $devices --rm -it librtlsdr rtl_eeprom -d $idx 2>&1 | grep "Serial number:"`
+    idx_serial=`docker run $devices --rm -t librtlsdr rtl_eeprom -d $idx 2>&1 | grep "Serial number:"`
     for ppm_spec in "${ppm_specs[@]}"; do
         serial=$(echo $ppm_spec | cut -f1 -d:)
         ppm=$(echo $ppm_spec | cut -f2 -d:)
