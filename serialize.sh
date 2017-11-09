@@ -1,13 +1,13 @@
 #!/bin/bash
 
-device_count=`lsusb | grep "Realtek.*RTL" | wc -l`
+device_count=`lsusb -d 0x0bda:2838 | wc -l`
 
 if [ "$device_count" -eq "0" ]; then
    echo "no devices found."
    exit 1
 fi
 
-device_ids=`lsusb | grep "Realtek.*RTL" | cut -c5-8,16-18`
+device_ids=`lsusb -d 0x0bda:2838 | cut -c5-8,16-18`
 devices=""
 
 while read -r device_id; do
